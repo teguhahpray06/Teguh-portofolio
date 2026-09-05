@@ -1,0 +1,242 @@
+{
+  "main": {
+    "name": "Teguh Ahmad Prayogo",
+    "logo": "TeguhAP",
+    "shortDesc": "Building practical digital solutions through web development, information systems, data management, and digital administration, with a focus on usability, efficiency, and continuous improvement.",
+    "titles": [
+      "System & Data Management",
+      "IT & Digital Administration",
+      "Next.js & React Developer",
+      "Full-Stack Developer"
+    ],
+    "heroImage": "/profile-me.png",
+    "techStackImages": [
+      "https://img.icons8.com/color/144/000000/flutter.png",
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codeigniter/codeigniter-plain.svg",
+      "https://img.icons8.com/color/144/000000/python.png"
+    ]
+  },
+  "about": {
+    "aboutImage": "/about-me.png",
+    "about": "I'm Teguh Ahmad Prayogo, an Information Technology graduate from Universitas Muhammadiyah Purwokerto with a strong interest in web development, data management, and digital solutions. I have hands-on experience building web-based applications and information systems through academic projects, internships, and personal projects. I'm passionate about creating useful and user-friendly digital solutions while continuously learning, developing my skills, and growing as an IT professional.",
+    "callUrl": "https://wa.me/6281222454485"
+  },
+  "socials": [
+    {
+      "name": "GitHub",
+      "icon": "FaGithub",
+      "link": "https://github.com/teguhahpray06"
+    },
+    {
+      "name": "Instagram",
+      "icon": "FaInstagram",
+      "link": "https://www.instagram.com/teahpray?igsi=MXVpeDE4dHRrMXowag%3D%3D&utm_source=qr"
+    },
+    {
+      "name": "LinkedIn",
+      "icon": "FaLinkedin",
+      "link": "https://www.linkedin.com/in/teguh-ahmad-prayogo-1824a541b"
+    },
+    {
+      "name": "WhatsApp",
+      "icon": "FaWhatsapp",
+      "link": "https://wa.me/6281222454485"
+    }
+  ],
+  "skills": [
+    {
+      "name": "HTML5",
+      "image": "https://img.icons8.com/color/144/000000/html-5--v1.png",
+      "category": "Frontend"
+    },
+    {
+      "name": "CSS3",
+      "image": "https://img.icons8.com/color/144/000000/css3.png",
+      "category": "Frontend"
+    },
+    {
+      "name": "JavaScript",
+      "image": "https://img.icons8.com/color/144/000000/javascript.png",
+      "category": "Frontend"
+    },
+    {
+      "name": "TypeScript",
+      "image": "https://img.icons8.com/color/144/000000/typescript.png",
+      "category": "Frontend"
+    },
+    {
+      "name": "Bootstrap",
+      "image": "https://img.icons8.com/color/144/000000/bootstrap.png",
+      "category": "Frontend"
+    },
+    {
+      "name": "Tailwind CSS",
+      "image": "https://img.icons8.com/color/144/000000/tailwindcss.png",
+      "category": "Frontend"
+    },
+    {
+      "name": "React JS",
+      "image": "https://img.icons8.com/color/144/000000/react-native.png",
+      "category": "Frontend"
+    },
+    {
+      "name": "Next.js",
+      "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+      "category": "Frontend"
+    },
+    {
+      "name": "PHP",
+      "image": "https://img.icons8.com/color/144/000000/php.png",
+      "category": "Backend"
+    },
+    {
+      "name": "CodeIgniter",
+      "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codeigniter/codeigniter-plain.svg",
+      "category": "Backend"
+    },
+    {
+      "name": "Go",
+      "image": "https://img.icons8.com/color/144/000000/golang.png",
+      "category": "Backend"
+    },
+    {
+      "name": "Python",
+      "image": "https://img.icons8.com/color/144/000000/python.png",
+      "category": "Backend"
+    },
+    {
+      "name": "Node.js",
+      "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+      "category": "Backend"
+    },
+    {
+      "name": "Laravel",
+      "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg",
+      "category": "Backend"
+    },
+    {
+      "name": "SQL",
+      "image": "https://img.icons8.com/color/144/000000/sql.png",
+      "category": "Backend"
+    },
+    {
+      "name": "PostgreSQL",
+      "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+      "category": "Backend"
+    },
+    {
+      "name": "MySQL",
+      "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg",
+      "category": "Backend"
+    },
+    {
+      "name": "Supabase",
+      "image": "https://img.icons8.com/color/144/000000/supabase.png",
+      "category": "Backend"
+    },
+    {
+      "name": "Prisma",
+      "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg",
+      "category": "Backend"
+    },
+    {
+      "name": "Firebase",
+      "image": "https://img.icons8.com/color/144/000000/firebase.png",
+      "category": "Backend"
+    },
+    {
+      "name": "Flutter",
+      "image": "https://img.icons8.com/color/144/000000/flutter.png",
+      "category": "Mobile"
+    },
+    {
+      "name": "Dart",
+      "image": "https://img.icons8.com/color/144/000000/dart.png",
+      "category": "Mobile"
+    },
+    {
+      "name": "Kotlin",
+      "image": "https://img.icons8.com/color/144/000000/kotlin.png",
+      "category": "Mobile"
+    },
+    {
+      "name": "Git",
+      "image": "https://img.icons8.com/color/144/000000/git.png",
+      "category": "Tools"
+    },
+    {
+      "name": "GitHub",
+      "image": "https://img.icons8.com/material-outlined/96/000000/github.png",
+      "category": "Tools"
+    },
+    {
+      "name": "Vercel",
+      "image": "https://res.cloudinary.com/lifecodes/image/upload/v1677508669/Portfolio/gd1ferzh1vbopo15yysy.svg",
+      "category": "Tools"
+    }
+  ],
+  "projects": [
+     {
+      "name": "Sistem Informasi SMP Muhammadiyah 2 Bolang",
+      "techstack": "Next.js, React, TypeScript, Tailwind CSS, Firebase , Cloudinary",
+      "category": "Web",
+      "image": "/projects/websiteinformasi.png",
+      "desc": "Website sistem informasi SMP Muhammadiyah 2 Bolang yang menyediakan informasi seputar sekolah dan layanan digital untuk mendukung kebutuhan administrasi serta penyampaian informasi kepada siswa dan masyarakat.",
+      "links": {
+        "code": "https://github.com/teguhahpray06/smp-muhammadiya2Bolang",
+        "video": "",
+        "visit": "https://smpmuhammadiyah2bolang.site/"
+      }
+    }
+  ],
+  "experiences": [
+    {
+      "company": "Personal Projects",
+      "position": "Independent Developer",
+      "startDate": "2024",
+      "endDate": "Present",
+      "desc": [
+        "Develop web-based applications and information systems through personal and academic projects.",
+        "Build practical digital solutions based on project requirements and user needs.",
+        "Continuously improve technical skills through hands-on projects and exploration of new technologies."
+      ]
+    },
+    {
+      "company": "SMP Muhammadiyah 2 Bolang",
+      "position": "Internship",
+      "startDate": "Apr 2025",
+      "endDate": "Sep 2025",
+      "desc": [
+        "Developed a school profile website to provide accessible information about the school and its programs.",
+        "Assisted in developing a web-based Student Admission (PPDB) system.",
+        "Assisted with student data processing and digital administrative activities."
+      ]
+    }
+  ],
+
+  "educations": [
+    {
+      "institute": "Universitas Muhammadiyah Purwokerto, Purwokerto",
+      "degree": "Bachelor of Informatics Engineering",
+      "startDate": "2022",
+      "endDate": "2026",
+      "desc": [
+        "Completed a Bachelor's degree in Informatics Engineering.",
+        "Thesis: Implementation of Gamma Correction for Real-Time Low-Light Image Enhancement on Mobile Cameras.",
+        "Developed a mobile-based application for enhancing low-light image quality in real time."
+      ]
+    },
+    {
+      "institute": "SMK Negeri 1 Wanareja, Cilacap",
+      "degree": "Multimedia",
+      "startDate": "2019",
+      "endDate": "2021",
+      "desc": [
+        "Completed vocational education with a focus on Multimedia.",
+        "Gained practical experience in multimedia, digital content, and computer-based projects.",
+        "Developed foundational skills in technology, digital media, and creative project development."
+      ]
+    }
+  ]
+}
