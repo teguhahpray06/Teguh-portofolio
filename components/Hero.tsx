@@ -13,13 +13,11 @@ interface HeroProps {
 
 const Hero = ({ mainData }: HeroProps) => {
 
-    const { name, titles, heroImage, shortDesc, techStackImages } = mainData
+    const { name, titles, heroImage, shortDesc } = mainData
     const [firstName, ...lastName] = name.split(' ')
 
-    const circleBase = "bg-white dark:bg-grey-800 rounded-full place-items-center"
-
     return (
-        <section id='home' className="bg-[#F9F9FA] dark:bg-grey-900 relative isolate min-h-screen w-full mx-auto overflow-hidden">
+        <section id='home' className="hero-surface relative isolate mx-auto min-h-screen w-full overflow-hidden bg-[#f7fbfc] dark:bg-grey-900">
 
             <div className="absolute -z-10 min-h-screen h-full w-full dark:hidden">
                 <Image
@@ -28,23 +26,23 @@ const Hero = ({ mainData }: HeroProps) => {
                     sizes="100vw"
                     style={{ objectFit: 'cover' }}
                     loading='lazy'
-                    className='object-bottom'
+                    className='hero-entrance-background object-bottom'
                     quality={100} alt={''} />
             </div>
 
             <div className="pt-16 lg:pt-40 pb-16 lg:pb-20 flex flex-col-reverse lg:flex-row justify-around gap-10 lg:gap-0">
 
                 <div className="flex flex-col gap-4 md:gap-6 text-left lg:w-1/2 2xl:w-1/3 mx-4 md:mx-6 xl:mx-0">
-                    <div className="reveal-up flex items-center gap-1" style={{ animationDelay: '100ms' }}>
+                    <div className="reveal-up flex items-center gap-1" style={{ animationDelay: '2.1s' }}>
                         <Image unoptimized={true} alt='waving-hand' width={30} height={30} src={wavingHand} />
-                        <p className="text-lg md:text-xl mt-2 md:mt-1.5">
+                        <p className="mt-2 text-lg text-[#58717b] md:mt-1.5 md:text-xl dark:text-white">
                             Hey
                         </p>
                     </div>
-                    <h1 className="reveal-up text-4xl md:text-6xl font-bold relative" style={{ animationDelay: '180ms' }}>
-                        I&apos;m <span className="text-green-700 dark:text-green-600">{firstName}</span> {lastName.join(' ')}
+                    <h1 className="reveal-up text-4xl md:text-6xl font-bold relative" style={{ animationDelay: '2.35s' }}>
+                        I&apos;m <span className="text-cyan-700 dark:text-green-600">{firstName}</span> {lastName.join(' ')}
                     </h1>
-                    <div className="reveal-up flex flex-row items-start md:items-center gap-1.5" style={{ animationDelay: '260ms' }}>
+                    <div className="reveal-up flex flex-row items-start md:items-center gap-1.5" style={{ animationDelay: '2.6s' }}>
                         <h2 className="text-lg md:text-2xl">
                             I am into
                         </h2>
@@ -55,19 +53,19 @@ const Hero = ({ mainData }: HeroProps) => {
                                 loop: true,
                                 deleteSpeed: 50,
                                 delay: 50,
-                                wrapperClassName: "text-green-700 dark:text-green-600 text-lg md:text-2xl font-medium",
-                                cursorClassName: "text-green-700 dark:text-green-600 text-lg md:text-2xl"
+                                wrapperClassName: "text-orange-600 dark:text-green-600 text-lg md:text-2xl font-medium",
+                                cursorClassName: "text-orange-600 dark:text-green-600 text-lg md:text-2xl"
                             }}
                         />
                     </div>
 
-                    <p className='reveal-up text-sm md:text-base text-gray-600 dark:text-gray-300' style={{ animationDelay: '340ms' }}>
+                    <p className='reveal-up text-sm md:text-base text-gray-600 dark:text-gray-300' style={{ animationDelay: '2.85s' }}>
                         {shortDesc}
                     </p>
 
-                    <div className="reveal-up flex flex-col min-[365px]:flex-row items-start min-[365px]:items-center gap-3" style={{ animationDelay: '420ms' }}>
+                    <div className="reveal-up flex flex-col min-[365px]:flex-row items-start min-[365px]:items-center gap-3" style={{ animationDelay: '3.1s' }}>
                         <ScrollLink
-                            className="w-fit text-sm md:text-base py-2 px-4 cursor-pointer flex items-center gap-1 rounded-md bg-green-600 hover:bg-green-700 dark:bg-green-700 hover:dark:bg-green-800 transition-colors group text-white"
+                            className="group flex w-fit cursor-pointer items-center gap-1 rounded-full bg-cyan-700 px-4 py-2 text-sm text-white transition-colors hover:bg-cyan-800 md:text-base"
                             to={'about'}
                             offset={-96}
                             smooth={true}
@@ -80,23 +78,13 @@ const Hero = ({ mainData }: HeroProps) => {
                     </div>
                 </div>
 
-                <div className="relative mx-auto lg:mx-0 mt-12 md:mt-16 lg:mt-0">
-                    <div className="float-slow w-56 h-56 md:w-80 md:h-80 lg:-translate-x-16">
-                        <Image alt='avatar' width={1000} height={1000} className="rounded-full w-full h-full object-cover transition-transform duration-500 hover:scale-105" src={heroImage} />
+                <div className="hero-portrait-entrance relative mx-auto lg:mx-0 mt-12 md:mt-16 lg:mt-0">
+                    <div className="hero-portrait float-slow relative w-56 h-56 md:w-80 md:h-80 lg:-translate-x-16">
+                        <div className="hero-portrait__halo" aria-hidden="true" />
+                        <div className="hero-portrait__frame" aria-hidden="true" />
+                        <Image alt='avatar' width={1000} height={1000} className="relative z-10 rounded-full w-full h-full object-cover transition-transform duration-500 hover:scale-105" src={heroImage} />
                     </div>
 
-                    <div className={`float-slow absolute grid -top-6 -left-12 lg:-top-14 lg:-left-32 w-16 h-16 md:w-20 md:h-20 ${circleBase} transition-transform duration-300 hover:scale-125`}>
-                        <Image alt='tech-stack' className="h-8 w-8 md:h-10 md:w-10 object-cover" src={techStackImages[0]} width={100} height={100} />
-                    </div>
-                    <div className={`float-slow absolute grid top-0 -right-12 lg:-right-4 w-14 h-14 ${circleBase} transition-transform duration-300 hover:scale-125`} style={{ animationDelay: '700ms' }}>
-                        <Image alt='tech-stack' className="h-8 w-8 md:h-10 md:w-10 object-cover" src={techStackImages[1]} width={100} height={100} />
-                    </div>
-                    <div className={`float-slow absolute grid bottom-[4rem] md:bottom-24 -right-16 md:-right-20 lg:bottom-[8.5rem] lg:-right-12 w-12 h-12 md:w-16 md:h-16 ${circleBase} transition-transform duration-300 hover:scale-125`} style={{ animationDelay: '1200ms' }}>
-                        <Image alt='tech-stack' className="h-6 w-6 md:h-10 md:w-10 object-cover" src={techStackImages[2]} width={100} height={100} />
-                    </div>
-                    <div className={`float-slow absolute grid -bottom-10 -right-8 lg:-bottom-0 lg:right-6 w-14 md:w-16 h-14 md:h-16 ${circleBase} transition-transform duration-300 hover:scale-125`} style={{ animationDelay: '1700ms' }}>
-                        <Image alt='tech-stack' className="h-10 w-10 object-cover" src={techStackImages[3]} width={100} height={100} />
-                    </div>
                 </div>
 
             </div>

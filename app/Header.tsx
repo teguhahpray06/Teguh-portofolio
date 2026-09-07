@@ -10,36 +10,27 @@ import Logo from '../components/Logo'
 export default function Header() {
 
     const [navCollapse, setNavCollapse] = useState(true)
-    const [scroll, setScroll] = useState(false)
     const [mounted, setMounted] = useState(false)
     const { theme, setTheme } = useTheme()
 
     useEffect(() => setMounted(true), [])
 
-    useEffect(() => {
-        const updateScroll = () => {
-            window.scrollY >= 90 ? setScroll(true) : setScroll(false)
-        }
-        window.addEventListener('scroll', updateScroll)
-        return () => window.removeEventListener('scroll', updateScroll)
-    }, [])
-
-
-    const navs = ['Home', 'About', 'Projects', 'Experience', 'Contact']
+    const navs = ['Home', 'About', 'Skills', 'Projects', 'Experience', 'Contact']
+    const desktopNavs = ['Home', 'About', 'Skills', 'Projects', 'Experience']
 
     return (
-        <header className={`backdrop-filter backdrop-blur-lg ${scroll ? 'border-b bg-white bg-opacity-40' : 'border-b-0'} dark:bg-grey-900 dark:bg-opacity-40 border-gray-200 dark:border-b-0 z-30 min-w-full flex flex-col fixed`}>
-            <nav className='lg:w-11/12 2xl:w-4/5 w-full md:px-6 2xl:px-0 mx-auto py-4 hidden sm:flex items-center justify-between'>
+        <header className='fixed left-1/2 top-2 z-40 w-[calc(100%-2rem)] -translate-x-1/2 overflow-visible rounded-[1.75rem] border border-cyan-900/10 bg-white/85 text-[#172b3a] shadow-lg shadow-cyan-950/10 backdrop-blur-xl dark:border-white/10 dark:bg-black/85 dark:text-white dark:shadow-black/20'>
+            <nav className='relative mx-auto flex h-14 w-full items-center justify-between px-4 md:px-6'>
 
-                <Link href={'/'} className='2xl:ml-6 hover:text-green-700 hover:dark:text-green-500 transition-colors duration-300'>
+                <Link href={'/'} className='shrink-0 transition-transform duration-300 hover:scale-[1.03]'>
                     <Logo />
                 </Link>
 
-                <ul className='flex items-center gap-8'>
-                    {navs.map((e, i) => (
-                        <li key={i}>
+                <ul className='absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 rounded-full border border-cyan-900/10 bg-[#eef7f8] p-1 sm:flex dark:border-white/10 dark:bg-[#1c1c1c]'>
+                    {desktopNavs.map((e) => (
+                        <li key={e}>
                             <ScrollLink
-                                className='relative hover:text-green-700 hover:dark:text-green-500 transition-colors capitalize cursor-pointer after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-0 after:bg-green-600 after:transition-all after:duration-300 hover:after:w-full'
+                                className='block cursor-pointer rounded-full px-4 py-2 text-sm text-[#58717b] transition-all duration-300 hover:bg-white hover:text-cyan-800 md:px-5 dark:text-white/75 dark:hover:bg-white/10 dark:hover:text-white'
                                 to={e.toLowerCase()}
                                 offset={-96}
                                 smooth={true}
@@ -50,15 +41,28 @@ export default function Header() {
                             </ScrollLink>
                         </li>
                     ))}
+                </ul>
+
+                <div className='ml-auto hidden items-center gap-3 sm:flex'>
                     <span
                         onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                        className='text-gray-700 dark:text-white hover:bg-gray-100 hover:dark:bg-green-700 p-1.5 rounded-full cursor-pointer select-none transition-all duration-300 hover:rotate-180 hover:scale-110'>
+                        aria-label='Toggle theme'
+                        className='cursor-pointer select-none rounded-full p-2 text-[#58717b] transition-all duration-300 hover:bg-cyan-50 hover:text-cyan-800 hover:rotate-12 dark:text-white/75 dark:hover:bg-white/10 dark:hover:text-white'>
                         {mounted && (theme === 'dark' ? <FiSun /> : <FiMoon />)}
                     </span>
-                </ul>
+                    <ScrollLink
+                        to='contact'
+                        offset={-96}
+                        smooth={true}
+                        duration={500}
+                        isDynamic={true}
+                        className='cursor-pointer rounded-full bg-cyan-700 px-5 py-2.5 text-sm font-medium text-white transition-transform duration-300 hover:scale-105 hover:bg-cyan-800'>
+                        Contact
+                    </ScrollLink>
+                </div>
             </nav>
 
-            <nav className='p-4 flex sm:hidden items-center justify-between'>
+            <nav className='flex items-center justify-between px-5 py-4 sm:hidden'>
                 <Logo compact />
                 <div className='flex items-center gap-4'>
                     <span
@@ -70,13 +74,13 @@ export default function Header() {
                 </div>
             </nav>
 
-            <div className={`flex min-h-screen w-screen absolute md:hidden top-0 ${!navCollapse ? 'right-0' : 'right-[-100%]'} bottom-0 z-50 ease-in duration-300`}>
+            <div className={`fixed inset-0 flex min-h-screen w-screen md:hidden ${!navCollapse ? 'translate-x-0' : 'translate-x-full'} z-50 ease-in duration-300`}>
                 <div className="w-1/4" onClick={() => setNavCollapse(true)}></div>
 
-                <div className="flex flex-col p-4 gap-5 bg-gray-100/95 backdrop-filter backdrop-blur-sm dark:bg-grey-900/95 w-3/4">
+                <div className="flex w-3/4 flex-col gap-5 bg-gray-100/95 p-4 text-black backdrop-blur-sm dark:bg-grey-900/95 dark:text-white">
                     <CgClose className='self-end my-2' size={20} onClick={() => setNavCollapse(true)} />
 
-                    {navs.slice(0, 4).map((e) => (
+                    {navs.slice(0, 5).map((e) => (
                         <ScrollLink
                             key={e}
                             className='hover:text-purple-600 py-1.5 px-4 rounded transition-colors capitalize cursor-pointer'

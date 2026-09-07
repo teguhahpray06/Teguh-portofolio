@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import SectionWrapper from "../SectionWrapper";
 import ProjectCard from "./ProjectCard";
+import { motion } from 'framer-motion';
 
 interface Props {
     projectsData: project[]
@@ -31,20 +32,40 @@ const Projects = ({ projectsData }: Props) => {
     }, [])
 
     return (
-        <SectionWrapper id="projects" className="mt-16 md:mt-24 mx-4 md:mx-0">
-            <h2 className="text-4xl text-center">Projects</h2>
+        <SectionWrapper id="projects" className="mx-4 mt-16 md:mx-0 md:mt-24">
+            <div className="relative mx-auto max-w-6xl overflow-hidden px-1 text-[#172b3a] dark:text-white md:px-0">
+            <div className="pointer-events-none absolute -inset-x-8 top-0 -z-10 h-[32rem] opacity-70 dark:hidden [background-image:linear-gradient(rgba(14,116,144,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(14,116,144,0.08)_1px,transparent_1px),linear-gradient(115deg,transparent_0_58%,rgba(251,146,60,0.13)_58.2%,transparent_58.5%)] [background-size:2rem_2rem,2rem_2rem,auto]" />
+            <div className="mb-10 flex flex-col gap-6 border-b border-[#cbd9dc] pb-8 dark:border-white/10 md:flex-row md:items-end md:justify-between">
+                <div>
+                    <motion.h2
+                        initial={{ opacity: 0, y: 22 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.5 }}
+                        transition={{ duration: 0.55 }}
+                        className="text-4xl font-bold tracking-tight md:text-7xl"
+                    >Projects<span className="text-orange-500">.</span></motion.h2>
+                </div>
+            </div>
 
-            <div className="overflow-x-auto scroll-hide md:w-full max-w-screen-sm mx-auto mt-6 flex justify-between items-center gap-2 md:gap-3 bg-white dark:bg-grey-800 p-2 rounded-md">
+            <div className="mb-8 flex max-w-full items-center gap-2 overflow-x-auto border-b border-[#cbd9dc] pb-2 dark:border-white/10">
                 {categories.map((c: string = "", i: number) => (
-                    <span key={i} onClick={(e) => { filterProjects(c); e.currentTarget.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' }); }} className={`p-1.5 md:p-2 w-full text-sm md:text-base text-center capitalize rounded-md ${category.toLowerCase() === c.toLowerCase() ? "bg-green-600 text-white" : "hover:bg-gray-100 hover:dark:bg-grey-900"} cursor-pointer transition-all`}>
+                    <motion.span
+                        key={i}
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.5 }}
+                        transition={{ duration: 0.35, delay: i * 0.08 }}
+                        onClick={(e) => { filterProjects(c); e.currentTarget.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' }); }}
+                        className={`shrink-0 cursor-pointer px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] transition-all ${category.toLowerCase() === c.toLowerCase() ? "border-b-2 border-cyan-600 text-cyan-800 dark:border-orange-500 dark:text-orange-300" : "text-[#8ba3ad] hover:text-[#172b3a] dark:text-white/40 dark:hover:text-white"}`}
+                    >
                         {c}
-                    </span>
+                    </motion.span>
                 ))}
             </div>
 
-            <div className="md:mx-6 lg:mx-auto lg:w-5/6 2xl:w-3/4 mt-4 md:mt-8 mx-auto grid md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-10">
+            <div className="mx-auto grid max-w-5xl gap-5 md:grid-cols-2 xl:grid-cols-3">
                 {filteredProjects.slice(0, viewAll ? filteredProjects.length : 6).map((p: project, i: number) => (
-                    <ProjectCard key={i} {...p} />
+                    <ProjectCard key={i} {...p} projectIndex={i} />
                 ))}
             </div>
 
@@ -53,6 +74,7 @@ const Projects = ({ projectsData }: Props) => {
                 &&
                 <ViewAll scrollTo='projects' title={viewAll ? "Okay, I got it" : "View All"} handleClick={() => setViewAll(!viewAll)} />
             }
+            </div>
         </SectionWrapper>
     )
 }

@@ -1,6 +1,7 @@
 import './globals.css'
 import { Poppins } from '@next/font/google'
 import ThemeWrapper from '@/components/ThemeWrapper'
+import Header from './Header'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -15,8 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${poppins.className} font-poppins bg-[#F9F9FA] dark:bg-grey-900 text-black dark:text-white overflow-x-hidden`}>
+      <body className={`${poppins.className} font-poppins text-black dark:text-white overflow-x-hidden`}>
         <ThemeWrapper>
+          <Header />
           {children}
         </ThemeWrapper>
       </body>

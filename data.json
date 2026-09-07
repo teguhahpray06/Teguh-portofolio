@@ -18,10 +18,11 @@
     ]
   },
   "about": {
-    "aboutImage": "/about-me.png",
-    "about": "I'm Teguh Ahmad Prayogo, an Information Technology graduate from Universitas Muhammadiyah Purwokerto with a strong interest in web development, data management, and digital solutions. I have hands-on experience building web-based applications and information systems through academic projects, internships, and personal projects. I'm passionate about creating useful and user-friendly digital solutions while continuously learning, developing my skills, and growing as an IT professional.",
-    "callUrl": "https://wa.me/6281222454485"
-  },
+  "title": "IT",
+  "aboutImage": "/about-me.png",
+  "about": "I'm Teguh Ahmad Prayogo, an Information Technology graduate from Universitas Muhammadiyah Purwokerto with a strong interest in web development, data management, and digital solutions. I have hands-on experience building web-based applications and information systems through academic projects, internships, and personal projects. I'm passionate about creating useful and user-friendly digital solutions while continuously learning, developing my skills, and growing as an IT professional.",
+  "callUrl": "https://wa.me/6281222454485"
+},
   "socials": [
     {
       "name": "GitHub",
